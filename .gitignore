@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Data files (exclude large data files but keep structure)
+data/*.xlsx
+!data/csv/
+data/csv/*.csv
+!data/csv/Renovatie_per_bestemming.csv
+!data/csv/Bouwvergunningen_voor_woongebouwen,_indeling_naar_arrondissementen.csv
+
+# Reports and output
+output/
+reports/*.html
+!reports/css/
+
+# uv lock file (keep for reproducibility)
+# uv.lock

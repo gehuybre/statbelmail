@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block body_class %}building-permits{% endblock %}
+{% block container_class %}building-permits-container{% endblock %}
+
+{% block content %}
+<!-- Overview Section -->
+<div class="summary-stats">
+    <h3>Samenvatting</h3>
+    <div class="stats-grid">
+        <div class="stat-item">
+            <span class="stat-value">{{ stats.total_permits|number_format }}</span>
+            <span class="stat-label">Totaal Woningen</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">{{ stats.total_houses|number_format }}</span>
+            <span class="stat-label">Totaal Huizen</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">{{ stats.total_flats|number_format }}</span>
+            <span class="stat-label">Totaal Flats</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-value">{{ stats.date_range }}</span>
+            <span class="stat-label">Periode</span>
+        </div>
+    </div>
+</div>
+
+<!-- Analysis Section -->
+<h2>Analyse</h2>
+<div class="analysis-container">
+    <div class="table-section">
+        <h3>Verdeling per kwartaal (vanaf 2015)</h3>
+        {{ quarterly_table|safe }}
+    </div>
+    <div class="chart-section">
+        <h3>Kwartaalanalyse (vanaf Q1 2015)</h3>
+        <div id="quarterly-chart">
+            {{ chart_html|safe }}
+        </div>
+    </div>
+    <div class="chart-section">
+        <h3>Jaarlijkse trends per kwartaal (vanaf 2015)</h3>
+        <div id="yearly-quarters-chart">
+            {{ yearly_quarters_chart_html|safe }}
+        </div>
+    </div>
+    <div class="chart-section">
+        <h3>12-maandelijks lopend gemiddelde (vanaf 2015)</h3>
+        <div id="rolling-average-chart">
+            {{ rolling_average_chart_html|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Any additional JavaScript for building permits reports can go here
+</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for section in sections %}
+<div class="section">
+    <h2>{{ section.title }}</h2>
+    
+    {% if section.content %}
+    <div class="content">
+        {{ section.content|safe }}
+    </div>
+    {% endif %}
+    
+    {% for chart_html in section.chart_htmls %}
+    <div class="chart-container">
+        {{ chart_html|safe }}
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

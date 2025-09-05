@@ -1,0 +1,427 @@
+:root {
+  --primary-dark: #2f2f2f;
+  --header-bg: #f7f7f7;
+  --section-bg: #f3f3f3;
+  --link-accent: #19b6c8;
+  --link-hover: #15a0ab;
+  --card-bg: #fff;
+  --border-radius: 8px;
+  
+  /* Building permits specific colors */
+  --primary-blue: #1f3563;
+  --accent-yellow: #ffd600;
+  --light-gray: #f5f6fa;
+  --white: #fff;
+  --border-radius-large: 12px;
+}
+
+/* Basisinstellingen */
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: var(--primary-dark);
+  background: var(--header-bg);
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 3px 12px #0001;
+}
+
+/* Building permits specific container */
+.building-permits-container {
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 3px 12px #0001;
+}
+
+/* Building permits body styling - use the new design */
+.building-permits {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: var(--primary-dark);
+  background: var(--header-bg);
+}
+
+/* Koppen */
+h1, h2, h3, h4 {
+  color: var(--primary-dark);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 1.5em 0 0.6em 0;
+}
+
+h1, h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.section-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.block-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* Special styling for building permits headers - use teal accent */
+.building-permits h1 {
+  color: var(--primary-dark);
+  border-bottom: 3px solid var(--link-accent);
+  padding-bottom: 10px;
+}
+
+.building-permits h2, 
+.building-permits h3, 
+.building-permits h4, 
+.building-permits h5, 
+.building-permits h6 {
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin-top: 0;
+}
+
+/* Secties */
+section, .block-section {
+  background: var(--section-bg);
+  padding: 2.5rem 0;
+}
+
+.report-section {
+  background: var(--section-bg);
+  padding: 2.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: var(--border-radius);
+}
+
+/* Index page styling */
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.report-item {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1em 1em 1em 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.report-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.report-item a {
+  color: var(--link-accent);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  transition: color 0.14s;
+}
+
+.report-item a:hover {
+  color: var(--link-hover);
+}
+
+/* Building permits analysis */
+.analysis-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.chart-section, .table-section {
+  background: var(--white);
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 3px 12px #0002;
+  padding: 28px;
+  border: 2px solid var(--light-gray);
+}
+
+.table-section {
+  order: 1;
+}
+
+.chart-section {
+  order: 2;
+}
+
+/* Tables */
+table, .quarterly-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.95em;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0001;
+}
+
+th, td, .quarterly-table th, .quarterly-table td {
+  padding: 12px 15px;
+  text-align: right;
+  border: none;
+}
+
+th, .quarterly-table th {
+  background: var(--primary-dark);
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+tr:nth-child(even), .quarterly-table tr:nth-child(even) {
+  background: var(--section-bg);
+}
+
+tr:hover, .quarterly-table tr:hover {
+  background: #e6f7f9;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+.quarterly-table td:first-child {
+  text-align: left;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.quarterly-table td:last-child {
+  background: var(--link-accent);
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Statistics */
+.summary-stats {
+  margin: 20px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.stat-item {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #555 100%);
+  color: var(--white);
+  padding: 24px;
+  border-radius: var(--border-radius-large);
+  text-align: center;
+  box-shadow: 0 3px 12px #0001;
+  transition: transform 0.2s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px #0003;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--link-accent);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9em;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* Press Room & Agenda */
+.press-room, .agenda {
+  background: var(--section-bg);
+  padding: 2rem 2rem 2rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+  min-width: 280px;
+}
+
+.press-room .block-title, .agenda .block-title {
+  margin-top: 0;
+}
+
+.press-item {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  margin-bottom: 2.2em;
+  padding: 1em 1em 1em 1em;
+  display: flex;
+  gap: 1.1em;
+  align-items: flex-start;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.press-item img {
+  width: 110px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.press-meta {
+  color: #555;
+  font-size: 0.96em;
+}
+
+.press-link, .agenda-link {
+  color: var(--link-accent);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 0.4em;
+  display: inline-block;
+  transition: color 0.14s;
+}
+
+.press-link:hover, .agenda-link:hover {
+  color: var(--link-hover);
+}
+
+.agenda-entry {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 1em 1em 1em 1em;
+  margin-bottom: 1.3em;
+  box-shadow: 0 3px 12px #0001;
+}
+
+.agenda-topline {
+  font-size: 0.92em;
+  color: #313131;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+}
+
+.agenda-topline .date {
+  display: inline-block;
+  padding: 2px 7px;
+  border: 1px solid #cdcdcd;
+  background: #fafafa;
+  border-radius: 5px;
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.agenda-topline .typetag {
+  color: var(--link-accent);
+  font-weight: 600;
+}
+
+/* Buttons */
+.button, button, input[type="button"] {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 0.8em 2.1em;
+  border: none;
+  border-radius: 1.6em;
+  font-size: 1.1em;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 1.2em;
+  transition: background 0.15s;
+}
+
+.button:hover, button:hover, input[type="button"]:hover {
+  background: var(--link-hover);
+}
+
+/* Grijs vlak onder agenda & press room */
+.sections-wrapper {
+  background: var(--section-bg);
+  padding: 2.6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.8%;
+  justify-content: space-between;
+}
+
+/* Plotly chart styling */
+.js-plotly-plot {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+/* Chart containers */
+.chart-container {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #fafafa;
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
+}
+
+/* Timestamp */
+.timestamp {
+  text-align: right;
+  color: #555;
+  font-size: 0.96em;
+  margin-top: 30px;
+  border-top: 1px solid #cdcdcd;
+  padding-top: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .press-room, .agenda { 
+    width: 100%; 
+  }
+
+  section, .block-section { 
+    padding: 1.2rem 0; 
+  }
+  
+  .report-section { 
+    padding: 1.2rem 1rem; 
+  }
+
+  .analysis-container {
+    gap: 20px;
+  }
+  
+  .chart-section, .table-section {
+    padding: 14px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item {
+    padding: 16px;
+  }
+  
+  .stat-value {
+    font-size: 1.8em;
+  }
+}

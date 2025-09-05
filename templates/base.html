@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ css_path }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    <div class="container {% block container_class %}{% endblock %}">
+        {% block header %}
+        <h1>{{ title }}</h1>
+        {% endblock %}
+        
+        {% block content %}{% endblock %}
+        
+        {% block footer %}
+        <div class="timestamp">
+            {% if timestamp_text %}{{ timestamp_text }}{% else %}Report gegenereerd op{% endif %}: {{ timestamp }}
+        </div>
+        {% endblock %}
+    </div>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>

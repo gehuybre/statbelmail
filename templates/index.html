@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Overzicht van alle gegenereerde rapporten voor bouwvergunningen per provincie en gewest.</p>
+
+<div class="report-section">
+    <h2>Gewesten</h2>
+    <div class="report-grid">
+        {% for region in regions %}
+        <div class="report-item">
+            <a href="{{ region.filename }}">{{ region.display_name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="report-section">
+    <h2>Provincies</h2>
+    <div class="report-grid">
+        {% for province in provinces %}
+        <div class="report-item">
+            <a href="{{ province.filename }}">{{ province.display_name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="timestamp">
+    Rapporten gegenereerd op: {{ timestamp }}
+</div>
+{% endblock %}
